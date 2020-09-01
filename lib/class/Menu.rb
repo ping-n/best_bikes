@@ -1,4 +1,9 @@
+# External Gems
 require 'tty-prompt'
+require 'json'
+
+# Importing Class
+require_relative 'Product'
 
 class Menu
 
@@ -16,10 +21,13 @@ class Menu
       
     case user_selection
       when 1
-        puts 'View Products'
+        system('clear')
+        Product.view_product
       when 2
+        system('clear')
         puts 'Current Shopping Cart'
       when 3
+        system('clear')
         puts 'Thank you for using our service!'
         exit
       else
