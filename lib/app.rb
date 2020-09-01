@@ -1,4 +1,4 @@
-require_relative './class/Menu'
+require_relative './view/Menu'
 require 'json'
 
 # # Starting point of the application
