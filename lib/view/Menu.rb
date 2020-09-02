@@ -3,8 +3,8 @@ require 'json'
 require 'artii'
 require 'colorize'
 
-require_relative '../controllers/products'
-require_relative '../controllers/carts'
+require_relative '../models/Product'
+require_relative '../models/Cart'
 
 class Menu
   # Run the application
@@ -34,13 +34,13 @@ class Menu
     case user_selection
     when 1
       system('clear')
-      Products.view_all_products
+      Product.view_all_products
     when 2
       system('clear')
-      Carts.view_cart
+      Cart.view_cart
     when 3
       system('clear')
-      Carts.checkout
+      Cart.checkout
     when 4
       system('clear')
       puts ' '

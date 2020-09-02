@@ -1,4 +1,5 @@
 require_relative "../view/Menu"
+require_relative "../models/Product"
 
 class Controller
   def initialize
@@ -7,5 +8,5 @@ class Controller
 
   def run
     @menu.display_menu
-  end
+  end 
 end
