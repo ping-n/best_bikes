@@ -1,5 +1,5 @@
-require_relative '../view/Menu'
-require_relative '../models/Product'
+require_relative '../view/menu'
+require_relative '../models/product'
 
 class Controller
   def initialize

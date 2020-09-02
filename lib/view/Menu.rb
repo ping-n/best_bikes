@@ -3,8 +3,8 @@ require 'json'
 require 'artii'
 require 'colorize'
 
-require_relative '../models/Product'
-require_relative '../models/Cart'
+require_relative '../models/product'
+require_relative '../models/cart'
 
 class Menu
   # Run the application

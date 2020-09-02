@@ -1,7 +1,7 @@
 require 'json'
 require 'tty-prompt'
 require 'colorize'
-require_relative './Cart'
+require_relative './cart'
 
 class Product
   attr_accessor :name, :price
