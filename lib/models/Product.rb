@@ -11,7 +11,6 @@ class Product
     @price = price
   end
 
-  private
   # Called the get_products and create a new Product instance for each product in the JSON file
   # Output each product to the terminal
   def self.product_map
@@ -22,7 +21,7 @@ class Product
 
   # Get products from JSON file
   def self.get_products
-    json_from_file = File.read(File.expand_path('../../data/products.json', __FILE__))
+    json_from_file = File.read(File.expand_path('../data/products.json', __dir__))
     hash = JSON.parse(json_from_file)
   end
 

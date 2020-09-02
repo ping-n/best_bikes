@@ -1,8 +1,8 @@
-require_relative "../../lib/class/Product"
+require_relative '../../lib/models/Product'
 
 describe 'Product' do
   before(:each) do
-    @product = Product.new(123, "Test Product", 2000)
+    @product = Product.new(123, 'Test Product', 2000)
   end
 
   # Should have valid attributes
