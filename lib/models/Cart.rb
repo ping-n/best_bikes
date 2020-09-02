@@ -1,6 +1,6 @@
 require 'colorize'
 
-class Carts
+class Cart
   @cart = []
 
   def self.add_to_cart(cart_items)

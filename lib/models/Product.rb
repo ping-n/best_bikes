@@ -1,4 +1,7 @@
 require 'json'
+require 'tty-prompt'
+require 'colorize'
+require_relative './Cart'
 
 class Product
   attr_accessor :name, :price
@@ -23,6 +26,30 @@ class Product
   def self.get_products
     json_from_file = File.read(File.expand_path('../data/products.json', __dir__))
     JSON.parse(json_from_file)
+  end
+
+  # View all Products
+  def self.view_all_products
+    options = {}
+    product_map.each_with_index do |item, index|
+      # Store each product info as a key and product uuid as value in options
+      options.store("#{index + 1}: " + "#{item.name} | $#{item.price}".colorize(:yellow), item.uuid)
+    end
+    pass_to_cart(options)
+  end
+
+  def self.pass_to_cart(options)
+    prompt = TTY::Prompt.new
+    # Save product uuid from user into an array
+    user_selection = prompt.multi_select('Please select a product to add to cart', options, active_color: :green)
+
+    # Grab the item that matched user's selection item uuid
+    cart_items = product_map.select do |item|
+      user_selection.include? item.uuid
+    end
+
+    # Add selected products to Carts
+    Cart.add_to_cart(cart_items)
   end
 
   # Instance Method to change value of each Product instance
