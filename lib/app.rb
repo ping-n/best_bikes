@@ -1,6 +1,6 @@
 require 'json'
 require 'optparse'
-require_relative './view/Menu'
+require_relative './controllers/controller'
 
 options = {}
 OptionParser.new do |opts|
@@ -14,5 +14,6 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-#Starting point of the application
-Menu.run
+app = Controller.new
+# Starting point of the application
+app.run
