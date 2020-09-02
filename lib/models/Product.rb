@@ -14,7 +14,7 @@ class Product
   # Called the get_products and create a new Product instance for each product in the JSON file
   # Output each product to the terminal
   def self.product_map
-    products = get_products.map do |product|
+    get_products.map do |product|
       Product.new(product['uuid'], product['name'], product['price'])
     end
   end
