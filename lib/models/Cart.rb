@@ -34,7 +34,7 @@ class Cart
       exit
     else
       view_cart
-      puts "You've spent $#{@total} today, thank you for shopping at Best Bike!".colorize(:green)
+      puts "You spent $#{@total} today, thank you for shopping at Best Bike!".colorize(:green)
       puts ' '
       exit
     end

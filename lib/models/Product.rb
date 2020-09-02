@@ -57,7 +57,7 @@ class Product
     @name = new_name
   end
 
-  #Update price of Product
+  # Update price of Product
   def update_price(new_price)
     @price = new_price
   end
