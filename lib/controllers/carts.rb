@@ -2,13 +2,14 @@ module Carts
   @cart = []
   
   def self.add_to_cart(cart_items)
+    #Push selected item into cart
     @cart.push(cart_items).flatten!
   end
 
   def self.view_cart
     puts 'Products in Shopping Cart:'
     puts ' '
-    # Loop through item in the shopping can display it to the user
+    #Loop through item in the shopping can display it to the user
     empty_cart
     @cart.each_with_index do |item, index|
       puts "#{index + 1}: #{item.name} | $#{'%.2f' % item.price}"
@@ -22,6 +23,7 @@ module Carts
   end
 
   def self.checkout
+    #Check out method
     if @cart.length == 0
       puts "Seem like you didn't buy anything today but please come again 😁"
       exit
@@ -32,27 +34,28 @@ module Carts
   end
 
   def self.empty_cart
+    #Handle case when case is empty
     if @cart.length == 0 
       puts 'Your shopping cart is empty!!'
     end
   end
 
   def self.subtotal
-    # Map through the cart, output the price to a float
+    #Map through the cart, output the price to a float
     cart_subtotal = @cart.map do |item|
       item.price.to_f
     end
-    # Sum of price from cart and save to the subtotal variable
+    #Sum of price from cart and save to the subtotal variable
     @subtotal = cart_subtotal.reduce(0) { |sum, n| sum + n }
   end
 
   def self.discount
-    # Discount conditions
+    #Discount conditions
     over20 = 0.9
     over50 = 0.85
     over100 = 0.8
 
-    # Applying the discounts
+    #Applying the discounts
     case @subtotal
     when 0..20
       @total = @subtotal

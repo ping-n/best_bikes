@@ -14,5 +14,5 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-# Starting point of the application
+#Starting point of the application
 Menu.run

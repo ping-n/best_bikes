@@ -12,7 +12,7 @@ class Menu
       prompt = TTY::Prompt.new
 
       user_selection = prompt.select('Please select from the following options', active_color: :cyan) do |menu|
-        # Menu choices
+        #Menu choices
         menu.choice 'View Products', 1
         menu.choice 'View Shopping Cart', 2
         menu.choice 'Check out', 3
