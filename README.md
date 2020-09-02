@@ -37,6 +37,12 @@ To run rspec tests
 bin/rspec
 ```
 
+### Manual Testing
+
+Manual testing spreadsheet can be found inside the test directory.
+
+<img src="./asset/manual-testing.png" alt="manual testing">
+
 ## Features
 ---
 
@@ -52,7 +58,12 @@ Feature:
   - 15% off for total over $50
   - 20% off for total over $100
 
-Extra Feature:
-
-- Guest and Admin View
-- Admin can perform CRUD for products
+## Design
+---
+- DRY principal - keeping code dry and easy to read
+- OOP - Class base programming for maintainability and readability (Product class, Cart class)
+- MVC framework-  splitting application into Model, View and Controller
+- User friendly - fun and easy to navigate menu
+- Error handling - extensive manual testing and handle exception when cart is empty
+- Testing - unit testing and integration tests through rspec and extensive manual testing.
+- Code standard - sticking to ruby convention with naming of variable and classes. Made use of rubocop to ensure high code standard.
