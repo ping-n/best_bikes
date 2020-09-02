@@ -22,7 +22,7 @@ class Product
   # Get products from JSON file
   def self.get_products
     json_from_file = File.read(File.expand_path('../data/products.json', __dir__))
-    hash = JSON.parse(json_from_file)
+    JSON.parse(json_from_file)
   end
 
   # Instance Method to change value of each Product instance

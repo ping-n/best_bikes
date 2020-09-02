@@ -1,9 +1,8 @@
-# External Gems
 require 'tty-prompt'
 require 'json'
 
-# Importing Class
-require_relative '../controllers/ProductController'
+require_relative '../controllers/products'
+require_relative '../controllers/carts'
 
 class Menu
   def self.run
@@ -16,36 +15,23 @@ class Menu
         # Menu choices
         menu.choice 'View Products', 1
         menu.choice 'View Shopping Cart', 2
-        menu.choice 'Exit Application', 3
+        menu.choice 'Check out', 3
+        menu.choice 'Exit Application', 4
       end
 
       case user_selection
       when 1
         system('clear')
-        ProductController.view_all_products
+        Products::view_all_products
       when 2
         system('clear')
-        # Exceptions handling for when the shopping cart is empty
-        begin
-          puts 'Products in Shopping Cart:'
-          puts ' '
-          # Calling the ProductController method to view cart
-          ProductController.view_cart
-          puts ' '
-          # Calling the ProductController discount method and apply relevant discount
-          ProductController.discount
-          # For display the total amount to user
-          total = ProductController.total
-          puts ' '
-          puts "Total: $#{total}"
-          puts ' '
-        rescue StandardError => e
-          puts 'Your shopping cart is empty!!'
-          puts ' '
-        end
+        Carts::view_cart
       when 3
         system('clear')
-        puts 'Thank you for shopping at Best Bikes!'
+        Carts::checkout
+      when 4
+        system('clear')
+        puts 'Thanks for visiting Best Bikes 👋👋'
         exit
         end
     end
