@@ -38,6 +38,7 @@ class Product
     pass_to_cart(options)
   end
 
+  # Pass purchased item to cart
   def self.pass_to_cart(options)
     prompt = TTY::Prompt.new
     # Save product uuid from user into an array
@@ -47,16 +48,16 @@ class Product
     cart_items = product_map.select do |item|
       user_selection.include? item.uuid
     end
-
     # Add selected products to Carts
     Cart.add_to_cart(cart_items)
   end
 
-  # Instance Method to change value of each Product instance
+  # Update name of Product
   def update_name(new_name)
     @name = new_name
   end
 
+  #Update price of Product
   def update_price(new_price)
     @price = new_price
   end

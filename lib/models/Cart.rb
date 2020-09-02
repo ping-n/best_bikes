@@ -3,11 +3,13 @@ require 'colorize'
 class Cart
   @cart = []
 
+  # Added purchased Products and push to cart array
   def self.add_to_cart(cart_items)
     # Push selected item into cart
     @cart.push(cart_items).flatten!
   end
 
+  # View current products inside the cart
   def self.view_cart
     puts 'Products in Shopping Cart:'.colorize(:light_green)
     puts ' '
@@ -25,8 +27,8 @@ class Cart
     puts ' '
   end
 
+  # Check out method
   def self.checkout
-    # Check out method
     if @cart.length == 0
       puts "Seem like you didn't buy anything today but please come again 😁"
       exit
@@ -38,11 +40,12 @@ class Cart
     end
   end
 
+  # Handle case when case is empty
   def self.empty_cart
-    # Handle case when case is empty
     puts 'Your shopping cart is empty!!'.colorize(:red) if @cart.length == 0
   end
 
+  # Find out the subtotal before applying the discount
   def self.subtotal
     # Map through the cart, output the price to a float
     cart_subtotal = @cart.map do |item|
@@ -52,6 +55,7 @@ class Cart
     @subtotal = cart_subtotal.reduce(0) { |sum, n| sum + n }
   end
 
+  # Apply Discount and assigned the Total
   def self.discount
     # Discount conditions
     over20 = 0.9
