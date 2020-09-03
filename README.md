@@ -29,6 +29,29 @@ bundle install
 ruby lib/app.rb
 ```
 
+#### Notes
+---
+
+Products are loaded from products.json in the data directory.
+
+New products can be added to the terminal application but stick to the json format below to ensure the application works.
+
+```json
+// products.json file
+  [
+    {
+      "uuid": <product uuid>,
+      "name": <product name>,
+      "price": <product price>
+    },
+    {
+      "uuid": <product uuid>,
+      "name": <product name>,
+      "price": <product price>
+    }
+  ]
+```
+
 ### Testing
 ---
 
