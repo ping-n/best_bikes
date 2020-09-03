@@ -1,8 +1,12 @@
-require_relative "../../lib/models/product"
+require_relative '../../lib/models/product'
 require 'spec_helper'
 
 RSpec.describe Product do
-  let (:product) { Product.new(123, "Test Product", 2000)}
+  let(:product) { Product.new(123, 'Test Product', 2000) }
+
+  it 'should an instance of Product' do
+    expect(product.class).to eq(Product)
+  end
 
   # Should have valid attributes
   it 'should be valid with a uuid' do
