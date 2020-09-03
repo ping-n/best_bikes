@@ -52,6 +52,24 @@ New products can be added to the terminal application but stick to the json form
   ]
 ```
 
+### Screenshot
+---
+
+<strong>Starting Menu</strong> 
+<img src="./asset/start.png" alt="start">
+
+<strong>View Product</strong> 
+
+Instruction: Add items with spacebar and press enter to confirm
+<img src="./asset/view_products.png" alt="view products">
+
+<strong>View Cart</strong>
+<img src="./asset/view_cart.png" alt="view cart">
+
+Note:
+
+Currently you can add multiple instance of the same product as it not have CRUD functionality therefore you can't delete item from the cart once it's been added.
+
 ### Testing
 ---
 
@@ -90,3 +108,6 @@ Feature:
 - Error handling - extensive manual testing and handle exception when cart is empty
 - Testing - unit testing and integration tests through rspec and extensive manual testing.
 - Code standard - sticking to ruby convention with naming of variable and classes. Made use of rubocop to ensure high code standard.
+
+---
+### Thank you for checking out Best Bikes 😁
