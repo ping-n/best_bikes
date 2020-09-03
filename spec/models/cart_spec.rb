@@ -25,8 +25,7 @@ RSpec.describe Cart do
 
     context 'with 2 items in shopping cart' do
       it 'should be able to calculate subtotal' do
-        cart.add_to_cart(product)
-        cart.add_to_cart(product)
+        2.times { cart.add_to_cart(product) }
         expect(cart.subtotal).to eq 30
       end
     end
