@@ -29,17 +29,17 @@ class Product
   end
 
   # View all Products
-  def self.view_all_products
+  def self.view_all_products(cart)
     options = {}
     product_map.each_with_index do |item, index|
       # Store each product info as a key and product uuid as value in options
       options.store("#{index + 1}: " + "#{item.name} | $#{item.price}".colorize(:yellow), item.uuid)
     end
-    pass_to_cart(options)
+    pass_to_cart(options, cart)
   end
 
   # Pass purchased item to cart
-  def self.pass_to_cart(options)
+  def self.pass_to_cart(options, cart)
     prompt = TTY::Prompt.new
     # Save product uuid from user into an array
     user_selection = prompt.multi_select('Please select a product to add to cart', options, active_color: :green)
@@ -49,7 +49,7 @@ class Product
       user_selection.include? item.uuid
     end
     # Add selected products to Carts
-    Cart.add_to_cart(cart_items)
+    cart.add_to_cart(cart_items)
   end
 
   # Update name of Product

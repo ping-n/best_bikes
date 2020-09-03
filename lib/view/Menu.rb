@@ -7,6 +7,10 @@ require_relative '../models/product'
 require_relative '../models/cart'
 
 class Menu
+  def initialize(cart)
+    @cart = cart
+  end
+
   # Run the application
   def display_menu
     a = Artii::Base.new font: 'slant'
@@ -34,13 +38,13 @@ class Menu
     case user_selection
     when 1
       system('clear')
-      Product.view_all_products
+      Product.view_all_products(@cart)
     when 2
       system('clear')
-      Cart.view_cart
+      @cart.view_cart
     when 3
       system('clear')
-      Cart.checkout
+      @cart.checkout
     when 4
       system('clear')
       puts ' '
